@@ -1,6 +1,5 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { useReducer } from 'react';
 
 export default function ProtectedRoute({ children, role }) {
     const { user } = useAuth();
