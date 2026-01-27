@@ -37,7 +37,7 @@ export default function Navbar() {
 
             {user ? (
               <>
-                {/* Authenticated users */}
+                {/* If host or admin, will show Host Dashboard */}
                 {user.role === 'host' || user.role === 'admin' ? (
                   <Link
                     to="/host"
@@ -46,6 +46,7 @@ export default function Navbar() {
                     Host Dashboard
                   </Link>
                 ) : (
+                    /* If a regular user, show link option to Become a Host */
                   <Link
                     to="/become-host"
                     className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
@@ -60,7 +61,8 @@ export default function Navbar() {
                 >
                   My Bookings
                 </Link>
-
+                
+                {/* Only show admin link for admin users */}
                 {user.role === 'admin' && (
                   <Link
                     to="/admin"
