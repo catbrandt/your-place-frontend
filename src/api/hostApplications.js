@@ -1,21 +1,21 @@
-import apiClient from "./client";
+import apiClient from './client';
 
 // User endpoints
 export const submitHostApplication = (applicationData) => {
-    return apiClient.post('/host-applications', applicationData);
+  return apiClient.post('/host-applications', applicationData);
 };
 
 export const getMyApplicationStatus = () => {
-    return apiClient.get('/host-applications/me');
+  return apiClient.get('/host-applications/me');
 };
 
 // Admin endpoints
 export const getAllApplications = (status) => {
-    return apiClient.get('/host-applications', { params: { status }});
+  return apiClient.get('/host-applications', { params: { status } });
 };
 
 export const reviewApplication = (id, decision) => {
-    return apiClient.patch('/host-applications/${id}', {
-        status: decision, // 'approved' or 'rejected'
-    });
+  return apiClient.patch('/host-applications/${id}', {
+    status: decision, // 'approved' or 'rejected'
+  });
 };

@@ -1,11 +1,11 @@
 // Placeholder page
 export default function BecomeHost() {
-    return (
-        <div className="max-w-7xl mx-auto px-4 py-12">
-            <h1 className="text-4xl font-bold text-primary-600">Become a Host</h1>
-            <p className="mt-4">Coming Soon...</p>
-        </div>
-    );
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold text-primary-600">Become a Host</h1>
+      <p className="mt-4">Coming Soon...</p>
+    </div>
+  );
 }
 
 // import { useEffect } from 'react';

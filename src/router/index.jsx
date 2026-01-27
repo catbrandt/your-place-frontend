@@ -1,5 +1,5 @@
-import { createBrowserRouter } from "react-router-dom";
-import Layout from "@/components/layout/Layout";
+import { createBrowserRouter } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
 import Home from '@/pages/Home';
 import Explore from '@/pages/Explore';
 import ContactUs from '@/pages/ContactUs';
@@ -12,37 +12,42 @@ import HostDashboard from '@/pages/HostDashboard';
 import ProtectedRoute from '@/components/common/ProtectedRoute';
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Layout />,
-        children: [
-            {index: true, element: <Home /> },
-            {path: 'explore', element: <Explore />},
-            {path: 'contact-us', element: <ContactUs />},
-            {path: 'listings/:type/:id', element: <ListingDetail />},
-            {path: 'login', element: <Login />},
-            {path: 'register', element: <Register />},
-            {path: 'become-host', element: (
-                <ProtectedRoute>
-                    <BecomeHost />
-                </ProtectedRoute>
-                ),
-            },
-            {path: 'bookings', element: (
-                <ProtectedRoute>
-                    <MyBookings />
-                </ProtectedRoute>
-                ),
-            },
-            {path: 'host', element: (
-                <ProtectedRoute role="host">
-                    <HostDashboard />
-                </ProtectedRoute>
-                ),
-            },
-        ],
-    },
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: 'explore', element: <Explore /> },
+      { path: 'contact-us', element: <ContactUs /> },
+      { path: 'listings/:type/:id', element: <ListingDetail /> },
+      { path: 'login', element: <Login /> },
+      { path: 'register', element: <Register /> },
+      {
+        path: 'become-host',
+        element: (
+          <ProtectedRoute>
+            <BecomeHost />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'bookings',
+        element: (
+          <ProtectedRoute>
+            <MyBookings />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'host',
+        element: (
+          <ProtectedRoute role="host">
+            <HostDashboard />
+          </ProtectedRoute>
+        ),
+      },
+    ],
+  },
 ]);
 
 export default router;
-

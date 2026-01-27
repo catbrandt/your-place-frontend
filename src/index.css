@@ -26,6 +26,7 @@
   --color-secondary-900: #9a7149;
 
   /* Fonts */
-  --font-display: Poppins, sans-serif;
-  --font-sans: Inter, system-ui, sans-serif;
+  --font-logo: Chango, cursive; /* For Your Place logo */
+  --font-display: Poppins, sans-serif; /* Headings */
+  --font-sans: Inter, system-ui, sans-serif; /* Body */
 }

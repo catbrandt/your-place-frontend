@@ -10,16 +10,16 @@ export default function Footer() {
           {/* Your Place logo - links to Homepage*/}
           <Link
             to="/"
-            className="text-white text-xl font-bold hover:text-grey-300 transition-colors"
+            className="text-primary-800 text-xl font-bold hover:text-primary-600 transition-colors"
           >
             Your Place
           </Link>
 
           {/* Copyright */}
-          <p className="text-sm">@ {currentYear} Your Place. All rights reserved.</p>
+          <p className="text-m">@ {currentYear} Your Place. All rights reserved.</p>
 
           {/* Contact Us link */}
-          <Link to="/contact-us" className="text-sm hover:text-purple transition-colors">
+          <Link to="/contact-us" className="text-primary-800 text-xl font-bold hover:text-primary-600 transition-colors">
             Contact Us
           </Link>
         </div>
