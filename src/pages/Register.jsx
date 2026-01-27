@@ -1,0 +1,9 @@
+// Placeholder Page
+export default function Register() {
+    return (
+        <div className="max-w-7xl mx-auto px-4 py-12">
+            <h1 className="text-4xl font-bold text-prmary-600">Register</h1>
+            <p className="mt-4">Coming Soon...</p>
+        </div>
+    );
+}
