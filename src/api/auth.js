@@ -11,7 +11,7 @@ export const login = (credentials) => {
 
 // User profile management
 export const getMe = () => {
-    return apiClient.post('/users/me');
+    return apiClient.get('/users/me');
 };
 
 export const updateMe = (userData) => {
@@ -24,5 +24,5 @@ export const deleteMe = () => {
 
 // Admin Only update of user role (user -> host)
 export const updateUserRole = (userId, role) => {
-    return apiClient.patch('/users/${userId}/role' { role });
+    return apiClient.patch('/users/${userId}/role', { role });
 };

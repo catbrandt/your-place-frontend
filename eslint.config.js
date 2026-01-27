@@ -43,7 +43,9 @@ export default [
       // Custom rules
       'no-unused-vars': ['warn', { 
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_'
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+        args: 'none',
       }],
       'no-console': 'warn',
       'prefer-const': 'error',
