@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '@/AuthContext';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -18,7 +18,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md stuicky top-0 z-50">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Your Place logo */}
@@ -30,7 +30,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/explore"
-              className="text-ray-700 hover:text-primary-600 font-medium transition-colors"
+              className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
             >
               Explore
             </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
                     Host Dashboard
                   </Link>
                 ) : (
-                    /* If a regular user, show link option to Become a Host */
+                  /* If a regular user, show link option to Become a Host */
                   <Link
                     to="/become-host"
                     className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
@@ -61,7 +61,7 @@ export default function Navbar() {
                 >
                   My Bookings
                 </Link>
-                
+
                 {/* Only show admin link for admin users */}
                 {user.role === 'admin' && (
                   <Link

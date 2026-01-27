@@ -19,7 +19,7 @@ export default function Footer() {
           <p className="text-sm">@ {currentYear} Your Place. All rights reserved.</p>
 
           {/* Contact Us link */}
-          <Link to="/contactUs" className="text-sm hover:text-white transition-colors">
+          <Link to="/contactUs" className="text-sm hover:text-purple transition-colors">
             Contact Us
           </Link>
         </div>

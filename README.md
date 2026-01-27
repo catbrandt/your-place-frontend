@@ -86,8 +86,8 @@ Airbnb styling compatible
 
 - ESLint enforces code quality rules:
     - Catches bugs and errors
-    - Enorces react 
-    - Ensures consistent coding patterns
+    - Enforces react
+    - Ensures consistent naming and coding patterns
 ```bash 
 npm run lint # Checks for issues
 npm run lin:fix # Auto-fixes issues
@@ -100,3 +100,25 @@ npm run lin:fix # Auto-fixes issues
 npm run format # Format all files
 npm run format:check # Format check
 ```
+
+---
+
+## UI/Design Style
+We've developed a customised design system using Tailwind CSS v4 with a defined:
+
+- Color palette (primary burgundy, secondary cream, white neutrals)
+- Typography system (Inter for body, Poppins for headings) **WILL CHANGE FONTS WHEN REFINING STYLING**
+- Spacing scale (Tailwind's 4px base unit)
+- Component library (buttons, cards, forms with consistent styling) **TO CREATE THESE FILES IN COMPONENTS/UI**
+- Responsive breakpoints
+
+See docs/STYLE_GUIDE.md for complete visual design documentation. **TO CREATE STILL. LINK TO THE DOC**
+
+### Component Patterns
+
+All UI components follow consistent patterns:
+
+- Reusable components in src/components/ui/ **to complete**
+- Props-based customisation
+- Accessible by default (ARIA labels, keyboard navigation)
+- Mobile-first responsive design
