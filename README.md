@@ -15,7 +15,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-```
+---
 
 ## Core Front End Stack
 
@@ -29,7 +29,7 @@ If you are developing a production application, we recommend using TypeScript wi
 - Vite gives fast dev startup compared to CRA
 - best balance of simplicity, industry relevence + safe otion for htis assignment
 
-**Alternatives::
+**Alternatives**
 
 - Next.js - also good option but adds SSR complexity 
 - Vue - React aligns beter with node backend
@@ -68,7 +68,7 @@ cleaner request/response logic
 
 ---
 
-## MAIN CONTECT
+## MAIN CONTENT
 
 ### Pages:
 
@@ -80,3 +80,23 @@ cleaner request/response logic
 - Bookings (protected, different for hosts or users o ntheir dashboard)
 - 
 
+### Code Quality and Formatting:
+
+Airbnb styling compatible
+
+- ESLint enforces code quality rules:
+    - Catches bugs and errors
+    - Enorces react 
+    - Ensures consistent coding patterns
+```bash 
+npm run lint # Checks for issues
+npm run lin:fix # Auto-fixes issues
+```
+
+- Prettier
+    - Automtic formatting
+    - Consistent spacing, quotes, line breaks
+```bash
+npm run format # Format all files
+npm run format:check # Format check
+```
