@@ -9,6 +9,7 @@ import Register from '@/pages/Register';
 import BecomeHost from '@/pages/BecomeHost';
 import MyBookings from '@/pages/MyBookings';
 import HostDashboard from '@/pages/HostDashboard';
+import NotFound from '@/pages/NotFound';
 import ProtectedRoute from '@/components/common/ProtectedRoute';
 
 const router = createBrowserRouter([
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ]);

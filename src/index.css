@@ -1,32 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Burgundy colors */
-  --color-primary-50: #fdf2f4;
-  --color-primary-100: #fbe8eb;
-  --color-primary-200: #f6d0d9;
-  --color-primary-300: #efa8b8;
-  --color-primary-400: #e57691;
-  --color-primary-500: #d84a6d;
-  --color-primary-600: #c32f54;
-  --color-primary-700: #a42345;
-  --color-primary-800: #891f3e;
-  --color-primary-900: #741d39;
+  /* Burgundy (Primary)*/
 
-  /* Cream colors */
-  --color-secondary-50: #fefdfb;
-  --color-secondary-100: #fefcf8;
-  --color-secondary-200: #fdf8f0;
-  --color-secondary-300: #fcf3e6;
-  --color-secondary-400: #faecd5;
-  --color-secondary-500: #f5e0bc;
-  --color-secondary-600: #e8c89a;
-  --color-secondary-700: #d4a870;
-  --color-secondary-800: #b88a55;
-  --color-secondary-900: #9a7149;
+  --color-primary-100: #fffbf2;
+  --color-primary-200: #7b062b;
+  --color-primary-300: #4a031a;
+
+  /* Brown (Secondary) */
+  --color-secondary-100: #9c744b;
+  --color-secondary-200: #291909;
 
   /* Fonts */
   --font-logo: Chango, cursive; /* For Your Place logo */
-  --font-display: Poppins, sans-serif; /* Headings */
+  --font-display: Inter, sans-serif; /* Headings */
   --font-sans: Inter, system-ui, sans-serif; /* Body */
 }

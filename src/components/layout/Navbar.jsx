@@ -18,19 +18,19 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px6 lg:px-8">
+    <nav className="bg-primary-100 shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Your Place logo */}
           <Link to="/" className="flex items-center" onClick={closeMobileMenu}>
-            <span className="text-xl sm:test-2xl font-bold font-logo text-primary-600">Your Place</span>
+            <span className="text-xl sm:text-2xl font-bold font-logo text-primary-300">Your Place</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/explore"
-              className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              className="text-primary-300 hover:font-bold font-medium transition-all"
             >
               Explore
             </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
                 {user.role === 'host' || user.role === 'admin' ? (
                   <Link
                     to="/host"
-                    className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                    className="text-primary-300 hover:font-bold font-medium transition-all"
                   >
                     Host Dashboard
                   </Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
                   /* If a regular user, show link option to Become a Host */
                   <Link
                     to="/become-host"
-                    className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                    className="text-primary-300 hover:font-bold font-medium transition-all"
                   >
                     Become a Host
                   </Link>
@@ -57,7 +57,7 @@ export default function Navbar() {
 
                 <Link
                   to="/bookings"
-                  className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                  className="text-primary-300 hover:font-bold font-medium transition-all"
                 >
                   My Bookings
                 </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
                 {user.role === 'admin' && (
                   <Link
                     to="/admin"
-                    className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                    className="text-primary-300 hover:font-bold font-medium transition-all"
                   >
                     Admin
                   </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
                   <span className="text-sm text-gray-600">{user.fullName || user.email}</span>
                   <button
                     onClick={handleLogout}
-                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors"
+                    className="text-primary-300 hover:font-bold font-medium transition-all"
                   >
                     Logout
                   </button>
@@ -87,19 +87,19 @@ export default function Navbar() {
                 {/* Public users - NEW: Become a Host link added */}
                 <Link
                   to="/become-host"
-                  className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                  className="text-primary-300 hover:font-bold font-medium transition-all"
                 >
                   Become a Host
                 </Link>
                 <Link
                   to="/login"
-                  className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                  className="text-primary-300 hover:font-bold font-medium transition-all"
                 >
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                  className="text-primary-300 hover:font-bold font-medium transition-all"
                 >
                   Sign Up
                 </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-primary-600 focus:outline-none"
+              className="text-primary-300 hover:text-primary-200 focus:outline-none"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -141,12 +141,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200">
+        <div className="md:hidden border-t border-primary-200 bg-primary-100">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               to="/explore"
               onClick={closeMobileMenu}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
             >
               Explore
             </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
                   <Link
                     to="/host"
                     onClick={closeMobileMenu}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                   >
                     Host Dashboard
                   </Link>
@@ -165,7 +165,7 @@ export default function Navbar() {
                   <Link
                     to="/become-host"
                     onClick={closeMobileMenu}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-primary-600 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                   >
                     Become a Host
                   </Link>
@@ -174,7 +174,7 @@ export default function Navbar() {
                 <Link
                   to="/bookings"
                   onClick={closeMobileMenu}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                 >
                   My Bookings
                 </Link>
@@ -183,7 +183,7 @@ export default function Navbar() {
                   <Link
                     to="/admin"
                     onClick={closeMobileMenu}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                   >
                     Admin
                   </Link>
@@ -197,7 +197,7 @@ export default function Navbar() {
                   </div>
                   <button
                     onClick={handleLogout}
-                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                   >
                     Logout
                   </button>
@@ -209,21 +209,21 @@ export default function Navbar() {
                 <Link
                   to="/become-host"
                   onClick={closeMobileMenu}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-primary-600 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                 >
                   Become a Host
                 </Link>
                 <Link
                   to="/login"
                   onClick={closeMobileMenu}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                 >
                   Login
                 </Link>
                 <Link
                   to="/register"
                   onClick={closeMobileMenu}
-                  className="block px-3 py-2 rounded-md text-base font-medium bg-primary-600 text-white hover:bg-primary-700"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-primary-300 hover:font-bold hover:bg-secondary-200 transition-all"
                 >
                   Sign Up
                 </Link>
