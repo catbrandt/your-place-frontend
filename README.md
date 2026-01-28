@@ -122,3 +122,7 @@ All UI components follow consistent patterns:
 - Props-based customisation
 - Accessible by default (ARIA labels, keyboard navigation)
 - Mobile-first responsive design
+
+### Stock images from pexels.com
+
+- Stock photos, royalty free
