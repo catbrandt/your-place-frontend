@@ -25,11 +25,7 @@ const router = createBrowserRouter([
       { path: 'register', element: <Register /> },
       {
         path: 'become-host',
-        element: (
-          <ProtectedRoute>
-            <BecomeHost />
-          </ProtectedRoute>
-        ),
+        element: <BecomeHost />
       },
       {
         path: 'bookings',

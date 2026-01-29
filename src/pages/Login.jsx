@@ -25,7 +25,7 @@ export default function Login() {
     resolver: zodResolver(loginSchema),
   });
 
-   // Get the page they were trying to access (e.g., '/become-host')
+   // Get the page they were trying to access (e.g., when user clics login from the Become Host page, they will be redirected to '/become-host' after logging in)
   const from = location.state?.from || '/';
 
   const onSubmit = async (data) => {
