@@ -1,22 +1,3 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
----
-
 ## Core Front End Stack
 
 ### React + Vite
@@ -61,7 +42,7 @@ cleaner request/response logic
 - widely used in modern startups
 - works well when creating dashboards (admin/host views)
 
-** Alternatives**
+**Alternatives**
 
 - MUI - pre built components (tables,models, forms)
 - tradeoff is less styling control and heavier bundle (since still studying, want to have some creative control for learning)
@@ -73,12 +54,14 @@ cleaner request/response logic
 ### Pages:
 
 - HOME (/)
-- Explore All (Spaces & Events) - Another page for individual clicked space/event that then leads to bookings page? 
+- Explore (Spaces & Events) - Another page for individual clicked space/event that then leads to bookings page? 
 - Login (all users)
-- Create Account (User signup)
+- Signup/Register (User signup - Everyone must signup to become user, user can then submit host application to change role)
 - Become a host signup (form)
-- Bookings (protected, different for hosts or users o ntheir dashboard)
-- 
+- Bookings - protected, different for hosts or users on their dashboard
+- Listing Detail - Page that provides space/event info for a specific listing (opens when clicked by user in explore page)
+- Not Found - 404 not found, links back to home or contact pages.
+- Contact us - Contact submit form (dummy).
 
 ### Code Quality and Formatting:
 
@@ -130,10 +113,10 @@ All UI components follow consistent patterns:
 ### Time constraints
 
 - Made user locale 'en' as default for this project due to time constraints. Option to integrate when scaling project 
+- Contact us page for submission. Would ideally be sent to admin dashboard to review. If time doesn't allow, may have to be dummy form, or just an email address provided to email admin for support.
 
 
 ### User Journey for Becoming a Host:
 
 Public User → Register/Login → Apply to Become Host → Admin Reviews → Approved → Login as Host
 
-- 
