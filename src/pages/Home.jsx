@@ -29,26 +29,7 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Test login */}
-          <div className="mt-6 space-x-4">
-            <button
-              onClick={() => login({ email: 'user@test.com', role: 'user', fullName: 'Test User' })}
-              className="bg-primary-500 text-primary-300 px-4 py-2 rounded"
-            >
-              Login as User
-            </button>
 
-            <button
-              onClick={() => login({ email: 'host@test.com', role: 'host', fullName: 'Test Host' })}
-              className="bg-primary-500 text-primary-300 px-4 py-2 rounded"
-            >
-              Login as Host
-            </button>
-
-            <button onClick={() => logout()} className="bg-gray-600 text-primary-300 px-4 py-2 rounded">
-              Logout
-            </button>
-          </div>
         </div>
           <div className="bg-primary-200/75 p-8 rounded-lg shadow-lg">
             <p className="text-l font-sans font-semibold text-primary-100 mb-4">Want to become a host? Or keen to make a booking?

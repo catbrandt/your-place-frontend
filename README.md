@@ -126,3 +126,14 @@ All UI components follow consistent patterns:
 ### Stock images from pexels.com
 
 - Stock photos, royalty free
+
+### Time constraints
+
+- Made user locale 'en' as default for this project due to time constraints. Option to integrate when scaling project 
+
+
+### User Journey for Becoming a Host:
+
+Public User → Register/Login → Apply to Become Host → Admin Reviews → Approved → Login as Host
+
+- 
