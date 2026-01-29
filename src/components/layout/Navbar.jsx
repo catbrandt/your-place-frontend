@@ -23,7 +23,9 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Your Place logo */}
           <Link to="/" className="flex items-center" onClick={closeMobileMenu}>
-            <span className="text-xl sm:text-2xl font-bold font-logo text-primary-300">Your Place</span>
+            <span className="text-xl sm:text-2xl font-bold font-logo text-primary-300">
+              Your Place
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

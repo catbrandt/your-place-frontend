@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, Link  } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -13,7 +13,12 @@ const applicationSchema = z.object({
   spaceTypes: z.array(z.string()).min(1, 'Select at least one space type'),
   categories: z.array(z.string()).min(1, 'Select at least one category'),
   capacity: z.number().min(1, 'Capacity must be at least 1'),
-  notes: z.string().min(20, 'Please provide a short explanation of your interest in becoming a host (at least 20 characters)'),
+  notes: z
+    .string()
+    .min(
+      20,
+      'Please provide a short explanation of your interest in becoming a host (at least 20 characters)'
+    ),
 });
 
 export default function BecomeHost() {
@@ -71,12 +76,8 @@ export default function BecomeHost() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-4xl font-bold font-display text-primary-300 mb-4">
-          Host Application
-        </h1>
-        <p className="text-primary-300 mb-8">
-          What would you like to offer on Your Place?.
-        </p>
+        <h1 className="text-4xl font-bold font-display text-primary-300 mb-4">Host Application</h1>
+        <p className="text-primary-300 mb-8">What would you like to offer on Your Place?.</p>
 
         <HostApplicationForm />
       </div>
@@ -116,9 +117,7 @@ function BecomeHostInfoPage() {
 
         {/* How It Works */}
         <div className="bg-secondary-100 rounded-lg border-4 border-primary-200/50 shadow-lg p-8 mb-8">
-          <h2 className="text-3xl font-bold font-display text-secondary-200 mb-6">
-            How It Works
-          </h2>
+          <h2 className="text-3xl font-bold font-display text-secondary-200 mb-6">How It Works</h2>
           <div className="space-y-6">
             <div className="flex gap-4">
               <div className="flex-shrink-0 w-12 h-12 bg-primary-200 text-primary-100 rounded-full flex items-center justify-center font-bold text-xl">
@@ -135,7 +134,9 @@ function BecomeHostInfoPage() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-black mb-2">Submit Your Application</h3>
-                <p className="text-secondary-200">Tell us about your space and why you want to become a host.</p>
+                <p className="text-secondary-200">
+                  Tell us about your space and why you want to become a host.
+                </p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -167,11 +168,15 @@ function BecomeHostInfoPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-xl font-semibold text-black mb-2">Earn Extra Income</h3>
-              <p className="text-secondary-200">Turn your space into an investment. Set your own prices.</p>
+              <p className="text-secondary-200">
+                Turn your space into an investment. Set your own prices.
+              </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-black mb-2">Build Community</h3>
-              <p className="text-secondary-200">Connect with people and create memorable experiences.</p>
+              <p className="text-secondary-200">
+                Connect with people and create memorable experiences.
+              </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-black mb-2">Full Control</h3>
@@ -209,7 +214,7 @@ function HostApplicationForm() {
   const onSubmit = async (data) => {
     try {
       setError('');
-      
+
       await submitHostApplication({
         offering_type: data.offeringType,
         space_types: data.spaceTypes,
@@ -219,7 +224,7 @@ function HostApplicationForm() {
       });
 
       setSuccess(true);
-      
+
       // Redirect after 2 seconds
       setTimeout(() => {
         navigate('/become-host');
@@ -234,13 +239,23 @@ function HostApplicationForm() {
       <div className="text-center py-12">
         <div className="mb-6">
           <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-            <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <svg
+              className="w-8 h-8 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
             </svg>
           </div>
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Application Submitted!</h2>
-        <p className="text-gray-600">We'll review your application and get back to you soon.</p>
+        <p className="text-gray-600">We&apos;ll review your application and get back to you soon.</p>
       </div>
     );
   }
@@ -299,17 +314,19 @@ function HostApplicationForm() {
             What type of space(s) do you have? *
           </label>
           <div className="grid grid-cols-2 gap-2">
-            {['Private Room', 'Backyard/Garden', 'Studio', 'Venue', 'Workshop', 'Other'].map((type) => (
-              <label key={type} className="flex items-center">
-                <input
-                  type="checkbox"
-                  value={type}
-                  {...register('spaceTypes')}
-                  className="h-4 w-4 text-primary-200 focus:ring-primary-200 rounded"
-                />
-                <span className="ml-2 text-gray-700">{type}</span>
-              </label>
-            ))}
+            {['Private Room', 'Backyard/Garden', 'Studio', 'Venue', 'Workshop', 'Other'].map(
+              (type) => (
+                <label key={type} className="flex items-center">
+                  <input
+                    type="checkbox"
+                    value={type}
+                    {...register('spaceTypes')}
+                    className="h-4 w-4 text-primary-200 focus:ring-primary-200 rounded"
+                  />
+                  <span className="ml-2 text-gray-700">{type}</span>
+                </label>
+              )
+            )}
           </div>
           {errors.spaceTypes && (
             <p className="text-red-600 text-sm mt-1">{errors.spaceTypes.message}</p>
@@ -323,7 +340,14 @@ function HostApplicationForm() {
           What categories does your offering fit? *
         </label>
         <div className="grid grid-cols-2 gap-2">
-          {['Creative', 'Movement', 'Social/Community', 'Learning/Study', 'Relaxation/Wellness', 'Outdoors/Nature'].map((category) => (
+          {[
+            'Creative',
+            'Movement',
+            'Social/Community',
+            'Learning/Study',
+            'Relaxation/Wellness',
+            'Outdoors/Nature',
+          ].map((category) => (
             <label key={category} className="flex items-center">
               <input
                 type="checkbox"
@@ -353,10 +377,10 @@ function HostApplicationForm() {
           className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-transparent"
           placeholder="10"
         />
-        {errors.capacity && (
-          <p className="text-red-600 text-sm mt-1">{errors.capacity.message}</p>
-        )}
-        <p className="text-xs text-gray-500 mt-1">How many people can your space/event accommodate?</p>
+        {errors.capacity && <p className="text-red-600 text-sm mt-1">{errors.capacity.message}</p>}
+        <p className="text-xs text-gray-500 mt-1">
+          How many people can your space/event accommodate?
+        </p>
       </div>
 
       {/* Notes */}
@@ -371,9 +395,7 @@ function HostApplicationForm() {
           className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-transparent"
           placeholder="Tell us about your space, your experience, and why you want to become a host..."
         />
-        {errors.notes && (
-          <p className="text-red-600 text-sm mt-1">{errors.notes.message}</p>
-        )}
+        {errors.notes && <p className="text-red-600 text-sm mt-1">{errors.notes.message}</p>}
         <p className="text-xs text-gray-500 mt-1">Minimum 20 characters</p>
       </div>
 
@@ -400,7 +422,8 @@ function ApplicationStatus({ application }) {
   const statusMessages = {
     pending: {
       title: 'Application Under Review',
-      message: 'Your application is being reviewed by our team. We\'ll notify you once a decision is made.',
+      message:
+        "Your application is being reviewed by our team. We'll notify you once a decision is made.",
     },
     approved: {
       title: 'Application Approved!',
@@ -424,11 +447,24 @@ function ApplicationStatus({ application }) {
           <div>
             <h3 className="font-semibold text-gray-900 mb-2">Your Application</h3>
             <div className="bg-gray-50 rounded-lg p-4 space-y-2 text-sm">
-              <p><span className="font-medium">Offering:</span> {application.offering_type}</p>
-              <p><span className="font-medium">Space Types:</span> {application.space_types?.join(', ') || 'N/A'}</p>
-              <p><span className="font-medium">Categories:</span> {application.categories?.join(', ')}</p>
-              <p><span className="font-medium">Capacity:</span> {application.capacity}</p>
-              <p><span className="font-medium">Submitted:</span> {new Date(application.created_at).toLocaleDateString()}</p>
+              <p>
+                <span className="font-medium">Offering:</span> {application.offering_type}
+              </p>
+              <p>
+                <span className="font-medium">Space Types:</span>{' '}
+                {application.space_types?.join(', ') || 'N/A'}
+              </p>
+              <p>
+                <span className="font-medium">Categories:</span>{' '}
+                {application.categories?.join(', ')}
+              </p>
+              <p>
+                <span className="font-medium">Capacity:</span> {application.capacity}
+              </p>
+              <p>
+                <span className="font-medium">Submitted:</span>{' '}
+                {new Date(application.created_at).toLocaleDateString()}
+              </p>
             </div>
           </div>
 

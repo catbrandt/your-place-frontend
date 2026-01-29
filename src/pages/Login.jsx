@@ -25,7 +25,7 @@ export default function Login() {
     resolver: zodResolver(loginSchema),
   });
 
-   // Get the page they were trying to access (e.g., when user clics login from the Become Host page, they will be redirected to '/become-host' after logging in)
+  // Get the page they were trying to access (e.g., when user clics login from the Become Host page, they will be redirected to '/become-host' after logging in)
   const from = location.state?.from || '/';
 
   const onSubmit = async (data) => {
@@ -38,7 +38,6 @@ export default function Login() {
       setError(err.response?.data?.message || 'Failed to login. Please try again.');
     }
   };
-
 
   return (
     <div className="bg-primary-300 min-h-full flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
@@ -71,14 +70,15 @@ export default function Login() {
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-transparent"
                 placeholder="you@example.com"
               />
-              {errors.email && (
-                <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>
-              )}
+              {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>}
             </div>
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-secondary-200 mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-secondary-200 mb-2"
+              >
                 Password *
               </label>
               <input
@@ -118,12 +118,11 @@ export default function Login() {
           </form>
         </div>
 
-
         {/* Sign Up Card - 1 right side column on large screens */}
         <div className="lg:col-span-1 bg-primary-100 rounded-lg shadow-lg shadow-primary-100/50 p-8 flex flex-col justify-center">
           <div className="text-center">
             <h2 className="text-2xl font-bold font-display text-secondary-200 mb-4">
-              Don't have an account?
+              Don&apos;t have an account?
             </h2>
             <p className="text-secondary-200 mb-6">
               Join up today to book experiences, or become a host.
@@ -137,6 +136,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   );
 }

@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       { path: 'register', element: <Register /> },
       {
         path: 'become-host',
-        element: <BecomeHost />
+        element: <BecomeHost />,
       },
       {
         path: 'bookings',

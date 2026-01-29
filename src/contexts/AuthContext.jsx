@@ -10,22 +10,22 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      // Fetch data from backend 
+      // Fetch data from backend
       getMe()
-      .then((response) => {
-        setUser(response.data);
-      })
-      .catch(() => {
-        // Token invalid, clear it
-        localStorage.removeItem('token');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+        .then((response) => {
+          setUser(response.data);
+        })
+        .catch(() => {
+          // Token invalid, clear it
+          localStorage.removeItem('token');
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } else {
       setLoading(false);
     }
-  },[]);
+  }, []);
 
   const login = async (credentials) => {
     // Call backend API
@@ -62,12 +62,13 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
-    return (
-    <AuthContext.Provider value={{ user, login, register, logout, loading }}>{children}</AuthContext.Provider>
-    );
-  }
-
-export function useAuth() {
-    return useContext(AuthContext);
+  return (
+    <AuthContext.Provider value={{ user, login, register, logout, loading }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
+export function useAuth() {
+  return useContext(AuthContext);
+}

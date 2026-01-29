@@ -16,10 +16,15 @@ export default function Footer() {
           </Link>
 
           {/* Copyright */}
-          <p className="text-sm text-primary-300">@ {currentYear} Your Place. All rights reserved.</p>
+          <p className="text-sm text-primary-300">
+            @ {currentYear} Your Place. All rights reserved.
+          </p>
 
           {/* Contact Us link */}
-          <Link to="/contact-us" className="text-primary-300 text-xl font-bold hover:text-primary-200 transition-colors">
+          <Link
+            to="/contact-us"
+            className="text-primary-300 text-xl font-bold hover:text-primary-200 transition-colors"
+          >
             Contact Us
           </Link>
         </div>

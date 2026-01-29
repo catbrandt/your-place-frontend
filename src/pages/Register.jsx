@@ -6,16 +6,18 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-const registerSchema = z.object({
-  fullName: z.string().min(2, 'Full nme must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
-  confirmPassword: z.string(),
-  // locale to be set as 'en' as default (option to integrate when scaling)
-}).refine((data) => data.password === data.confirmPassword, {
-  message: "Passowrd don't match",
-  path: ["confirmPassword"],
-});
+const registerSchema = z
+  .object({
+    fullName: z.string().min(2, 'Full nme must be at least 2 characters'),
+    email: z.string().email('Invalid email address'),
+    password: z.string().min(6, 'Password must be at least 6 characters'),
+    confirmPassword: z.string(),
+    // locale to be set as 'en' as default (option to integrate when scaling)
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passowrd don't match",
+    path: ['confirmPassword'],
+  });
 
 export default function Register() {
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ export default function Register() {
   const onSubmit = async (data) => {
     try {
       setError('');
-      
+
       // Prepare data for backend
       const userData = {
         fullName: data.fullName,
@@ -43,7 +45,7 @@ export default function Register() {
       };
 
       await registerUser(userData);
-      
+
       // Redirect to home after successful registration
       navigate('/');
     } catch (err) {
@@ -60,7 +62,7 @@ export default function Register() {
             <h1 className="text-4xl font-bold font-display text-secondary-200 mb-2">
               Create Account
             </h1>
-            <p className="text-secondary-200">Join us! Let's get you started:</p>
+            <p className="text-secondary-200">Join us! Let&apos;s get you started:</p>
           </div>
 
           {error && (
@@ -72,7 +74,10 @@ export default function Register() {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Full Name */}
             <div>
-              <label htmlFor="fullName" className="block text-sm font-medium text-secondary-200 mb-2">
+              <label
+                htmlFor="fullName"
+                className="block text-sm font-medium text-secondary-200 mb-2"
+              >
                 Full Name *
               </label>
               <input
@@ -99,14 +104,15 @@ export default function Register() {
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-transparent"
                 placeholder="you@example.com"
               />
-              {errors.email && (
-                <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>
-              )}
+              {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>}
             </div>
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-secondary-200 mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-secondary-200 mb-2"
+              >
                 Password *
               </label>
               <input
@@ -124,7 +130,10 @@ export default function Register() {
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-secondary-200 mb-2">
+              <label
+                htmlFor="confirmPassword"
+                className="block text-sm font-medium text-secondary-200 mb-2"
+              >
                 Confirm Password *
               </label>
               <input
@@ -157,7 +166,8 @@ export default function Register() {
               Already have an account?
             </h2>
             <p className="text-secondary-200 mb-6">
-              Login to access your bookings and explore new experiences. Or if you are one of our hosts, login to view your dashboard!
+              Login to access your bookings and explore new experiences. Or if you are one of our
+              hosts, login to view your dashboard!
             </p>
             <Link
               to="/login"
