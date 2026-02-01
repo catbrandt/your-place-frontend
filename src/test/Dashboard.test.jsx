@@ -30,9 +30,17 @@ describe('Dashboard', () => {
     localStorage.clear();
   });
 
-  it('should render correctly for host user', () => {
+  it('should render correctly for host user', async () => {
     localStorage.setItem('token', 'demo-token-host');
-    localStorage.setItem('user', JSON.stringify({ id: 'demo-host-1', email: 'host@example.com', fullName: 'Demo Host', role: 'host' }));
+    localStorage.setItem(
+      'user',
+      JSON.stringify({
+        id: 'demo-host-1',
+        email: 'host@example.com',
+        fullName: 'Demo Host',
+        role: 'host',
+      })
+    );
 
     render(
       <MemoryRouter>
@@ -42,19 +50,27 @@ describe('Dashboard', () => {
       </MemoryRouter>
     );
 
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        expect(screen.getByText(/welcome back/i)).toBeInTheDocument();
-        expect(screen.getByText(/host/i)).toBeInTheDocument();
-        expect(screen.getByText(/host dashboard/i)).toBeInTheDocument();
-        resolve();
-      }, 100);
-    });
+    // Wait for AuthProvider to hydrate user from localStorage
+    expect(await screen.findByText(/welcome back/i)).toBeInTheDocument();
+
+    // Role badge
+    expect(screen.getByText('Host')).toBeInTheDocument();
+
+    // Assert the unique CTA button (avoids matching both heading + button)
+    expect(screen.getByRole('button', { name: /go to host dashboard/i })).toBeInTheDocument();
   });
 
-  it('should render correctly for regular user', () => {
+  it('should render correctly for regular user', async () => {
     localStorage.setItem('token', 'demo-token-user');
-    localStorage.setItem('user', JSON.stringify({ id: 'demo-user-1', email: 'user@example.com', fullName: 'Demo User', role: 'user' }));
+    localStorage.setItem(
+      'user',
+      JSON.stringify({
+        id: 'demo-user-1',
+        email: 'user@example.com',
+        fullName: 'Demo User',
+        role: 'user',
+      })
+    );
 
     render(
       <MemoryRouter>
@@ -64,13 +80,8 @@ describe('Dashboard', () => {
       </MemoryRouter>
     );
 
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        expect(screen.getByText(/welcome back/i)).toBeInTheDocument();
-        expect(screen.getByText(/user/i)).toBeInTheDocument();
-        expect(screen.getByText(/become a host/i)).toBeInTheDocument();
-        resolve();
-      }, 100);
-    });
+    expect(await screen.findByText(/welcome back/i)).toBeInTheDocument();
+    expect(screen.getByText('User')).toBeInTheDocument();
+    expect(screen.getByText(/become a host/i)).toBeInTheDocument();
   });
 });
