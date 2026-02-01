@@ -9,12 +9,12 @@ export const getMyBooking = (scope = 'mine') => {
 };
 
 export const getBookingById = (id) => {
-  return apiClient.get('/bookings/${id}');
+  return apiClient.get(`/bookings/${id}`);
 };
 
 export const updateBooking = (id, bookingData) => {
-  return apiClient.patch('/bookings/${id}', bookingData);
+  return apiClient.patch(`/bookings/${id}`, bookingData);
 };
 export const deleteBooking = (id) => {
-  return apiClient.delete('/bookings/${id}');
+  return apiClient.delete(`/bookings/${id}`);
 };

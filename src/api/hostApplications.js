@@ -15,7 +15,7 @@ export const getAllApplications = (status) => {
 };
 
 export const reviewApplication = (id, decision) => {
-  return apiClient.patch('/host-applications/${id}', {
+  return apiClient.patch(`/host-applications/${id}`, {
     status: decision, // 'approved' or 'rejected'
   });
 };

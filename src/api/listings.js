@@ -6,7 +6,7 @@ export const getSpaces = (filters = {}) => {
 };
 
 export const getSpacesById = (id) => {
-  return apiClient.get('/spaces/${id}');
+  return apiClient.get(`/spaces/${id}`);
 };
 
 export const createSpace = (spaceData) => {
@@ -14,10 +14,10 @@ export const createSpace = (spaceData) => {
 };
 
 export const updateSpace = (id, spaceData) => {
-  return apiClient.patch('/spaces/${id}', spaceData);
+  return apiClient.patch(`/spaces/${id}`, spaceData);
 };
 export const deleteSpace = (id) => {
-  return apiClient.delete('/spaces/${id}');
+  return apiClient.delete(`/spaces/${id}`);
 };
 
 // Events
@@ -26,16 +26,16 @@ export const getEvents = (filters = {}) => {
 };
 
 export const getEventsById = (id) => {
-  return apiClient.get('/events/${id}');
+  return apiClient.get(`/events/${id}`);
 };
 
 export const createEvent = (eventData) => {
   return apiClient.post('/events', eventData);
 };
 
-export const updatEvent = (id, eventData) => {
-  return apiClient.patch('/events/${id}', eventData);
+export const updateEvent = (id, eventData) => {
+  return apiClient.patch(`/events/${id}`, eventData);
 };
 export const deleteEvent = (id) => {
-  return apiClient.delete('/events/${id}');
+  return apiClient.delete(`/events/${id}`);
 };

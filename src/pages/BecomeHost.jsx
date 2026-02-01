@@ -27,24 +27,33 @@ export default function BecomeHost() {
   const [applicationStatus, setApplicationStatus] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Check if user already has an application
-  useEffect(() => {
-    if (user) {
-      getMyApplicationStatus()
-        .then((response) => {
-          setApplicationStatus(response.data);
-        })
-        .catch(() => {
-          // No application found - okay
-          setApplicationStatus(null);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
+ // Check if user already has an application
+useEffect(() => {
+  let cancelled = false;
+
+  const loadStatus = async () => {
+    if (!user) {
       setLoading(false);
+      return;
     }
-  }, [user]);
+
+    try {
+      // NOTE: your apiClient interceptor returns response.data already
+      const status = await getMyApplicationStatus();
+      if (!cancelled) setApplicationStatus(status);
+    } catch {
+      if (!cancelled) setApplicationStatus(null);
+    } finally {
+      if (!cancelled) setLoading(false);
+    }
+  };
+
+  loadStatus();
+
+  return () => {
+    cancelled = true;
+  };
+}, [user]);
 
   // If already a host/admin, redirect to dashboard
   useEffect(() => {

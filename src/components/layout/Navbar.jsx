@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 
@@ -16,6 +16,18 @@ export default function Navbar() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
+  // Accessibility: close the mobile menu with Escape
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [mobileMenuOpen]);
 
   return (
     <nav className="bg-primary-100 shadow-md sticky top-0 z-50">
@@ -115,7 +127,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-primary-300 hover:text-primary-200 focus:outline-none"
-              aria-label="Toggle menu"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {mobileMenuOpen ? (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

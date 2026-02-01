@@ -24,5 +24,5 @@ export const deleteMe = () => {
 
 // Admin Only update of user role (user -> host)
 export const updateUserRole = (userId, role) => {
-  return apiClient.patch('/users/${userId}/role', { role });
+  return apiClient.patch(`/users/${userId}/role`, { role });
 };
