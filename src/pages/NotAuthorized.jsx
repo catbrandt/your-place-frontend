@@ -26,7 +26,7 @@ export default function NotAuthorized() {
             Access Denied
           </h1>
           <p className="text-secondary-200">
-            You don't have permission to access this page. This area is restricted to hosts only.
+            You don&apos;t have permission to access this page. This area is restricted to hosts only.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
