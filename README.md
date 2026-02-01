@@ -1,3 +1,52 @@
+## Getting Started
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Run the app locally
+```bash
+npm run dev
+```
+
+The app will be available at:
+http://localhost:5173
+
+## Demo / Offline Mode
+
+This frontend supports a **demo mode** so it can be run and assessed without a backend.
+
+- Authentication state is stored in `localStorage`
+- Demo users are provided via the AuthContext
+- Mock data is used for bookings, spaces, and events
+
+This allows protected routes (Dashboard, Bookings, Host Dashboard) to be demonstrated without requiring the API to be running.
+
+## Testing
+
+This project uses **Vitest** and **@testing-library/react**.
+
+```bash
+npm run test
+```
+
+Tests currently cover:
+- Auth context behaviour
+- Protected routes
+- Navbar rendering
+- Dashboard rendering by user role
+
+## Project Structure
+
+- `src/components` – reusable UI and layout components
+- `src/pages` – route-level pages
+- `src/contexts` – global state (auth)
+- `src/api` – API abstraction layer
+- `src/mocks` – demo and test data
+
+---
+
 ## Core Front End Stack
 
 ### React + Vite
