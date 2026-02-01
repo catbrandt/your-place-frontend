@@ -126,7 +126,7 @@ export default function Dashboard() {
           </div>
         ) : (
           <div className="text-center py-8">
-            <p className="text-secondary-200 mb-4">You don't have any bookings yet.</p>
+            <p className="text-secondary-200 mb-4">You don&apos;t have any bookings yet.</p>
             <Link to="/explore">
               <Button variant="primary">Explore Spaces & Events</Button>
             </Link>
