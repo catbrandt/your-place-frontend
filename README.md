@@ -23,6 +23,9 @@ This frontend supports a **demo mode** so it can be run and assessed without a b
 
 This allows protected routes (Dashboard, Bookings, Host Dashboard) to be demonstrated without requiring the API to be running.
 
+Account registration requires the backend API to be running.
+For assessment and demo purposes, demo users are provided via AuthContext.
+
 ## Testing
 
 This project uses **Vitest** and **@testing-library/react**.
