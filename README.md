@@ -95,7 +95,7 @@ We've developed a customised design system using Tailwind CSS v4 with a defined:
 - Component library (buttons, cards, forms with consistent styling) **TO CREATE THESE FILES IN COMPONENTS/UI**
 - Responsive breakpoints
 
-See docs/STYLE_GUIDE.md for complete visual design documentation. **TO CREATE STILL. LINK TO THE DOC**
+See docs/style-guide.md for complete visual design documentation. **TO CREATE STILL. LINK TO THE DOC**
 
 ### Component Patterns
 
